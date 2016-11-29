@@ -39,3 +39,18 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
   f.h = max.h
   win:setFrame(f)
 end)
+
+-- Center Window @ 75% Width --
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Down", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = (max.w * .125)
+  f.y = max.y
+  f.w = max.w * .75
+  f.h = max.h
+  win:setFrame(f)
+end)
+
