@@ -1,3 +1,45 @@
+-- Move & Resize window to left 33% of screen
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+  end)
+
+-- Move & Resize window to center 33% of screen
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + (max.w / 3)
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+  end)
+
+-- Move & Resize window to left 33% of screen
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + (max.w * 2 / 3)
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+  end)
+
 -- Move & Resize window to left 50% of screen
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
   local win = hs.window.focusedWindow()
